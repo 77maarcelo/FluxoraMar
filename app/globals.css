@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 90 10% 96%;
+    --foreground: 160 15% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 15% 11%;
+
+    --primary: 160 46% 20%;
+    --primary-foreground: 90 20% 97%;
+
+    --secondary: 90 12% 91%;
+    --secondary-foreground: 160 15% 14%;
+
+    --muted: 90 10% 92%;
+    --muted-foreground: 160 8% 38%;
+
+    --accent: 28 68% 46%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 6 58% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 100 12% 86%;
+    --input: 100 12% 84%;
+    --ring: 160 46% 26%;
+
+    --ink: 160 18% 9%;
+    --copper: 28 68% 46%;
+    --copper-light: 28 72% 60%;
+
+    --state-normal: 150 42% 30%;
+    --state-low: 32 72% 41%;
+    --state-out: 6 58% 44%;
+
+    --radius: 0.625rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01" 1, "cv01" 1;
+  }
+}
+
+/* Respeita a preferência de movimento reduzido do usuário em todo o site */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
