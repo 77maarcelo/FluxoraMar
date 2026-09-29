@@ -64,13 +64,7 @@ const FUNCIONALIDADES = [
 const AREAS_DE_INTERESSE = ["Produção", "Compras / Suprimentos", "Qualidade", "TI", "Direção / Gestão"];
 
 function Mark() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="1" y="16" width="8" height="13" rx="1.5" fill="hsl(var(--primary))" />
-      <rect x="11" y="9" width="8" height="20" rx="1.5" fill="hsl(var(--copper))" />
-      <rect x="21" y="1" width="8" height="28" rx="1.5" fill="hsl(var(--primary))" />
-    </svg>
-  );
+  
 }
 
 function Header() {
@@ -91,7 +85,6 @@ function Header() {
         </nav>
         <Link href="/demo" className={`hidden md:inline-flex ${buttonVariants()}`}>
           Acessar demonstração
-          <ArrowUpRight className="h-4 w-4" />
         </Link>
         <button
           type="button"
@@ -111,7 +104,6 @@ function Header() {
           ))}
           <Link href="/demo" className={`mt-2 ${buttonVariants()}`} onClick={() => setOpen(false)}>
             Acessar demonstração
-            <ArrowUpRight className="h-4 w-4" />
           </Link>
         </nav>
       ) : null}
@@ -142,12 +134,11 @@ function Hero() {
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Link href="/demo" className={buttonVariants({ size: "lg" })}>
               Experimentar a demonstração
-              <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <a href="#contato" className={buttonVariants({ size: "lg", variant: "outline" })}>
-              <MessageCircle className="h-4 w-4" />
-              Falar com o time comercial
-            </a>
+            
+          </div>
+          <div className="text-">
+            <h1>MARCELO</h1>
           </div>
         </div>
         <div className="opacity-0 animate-fade-up [animation-delay:120ms] motion-reduce:opacity-100 motion-reduce:animate-none rounded-lg border border-border bg-card p-5 shadow-sm">
@@ -239,42 +230,7 @@ function Preview() {
     { label: "Químicos", altura: 40 },
     { label: "Embalagens", altura: 34 },
   ];
-  return (
-    <section id="previa" className="border-b border-border bg-ink text-white">
-      <div className="container py-16">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="font-display text-sm font-medium text-copper-light">A plataforma</p>
-            <h2 className="mt-3 max-w-lg font-display text-3xl font-semibold tracking-tight">
-              Um painel só, com tudo que está entrando e saindo do estoque
-            </h2>
-          </div>
-          <Link href="/demo" className={buttonVariants({ variant: "copper", className: "w-fit" })}>
-            Ver a demonstração completa
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
-        </div>
-        <div className="mt-10 rounded-lg border border-white/10 bg-white/[0.04] p-4 sm:p-6">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {stats.map((s) => (
-              <div key={s.label} className="rounded-md border border-white/10 bg-white/[0.03] p-4">
-                <p className="font-display text-2xl font-semibold">{s.value}</p>
-                <p className="mt-1 text-xs text-white/60">{s.label}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-4 flex h-28 items-end gap-3 rounded-md border border-white/10 p-4">
-            {barras.map((b) => (
-              <div key={b.label} className="flex flex-1 flex-col items-center gap-2">
-                <div className="w-full rounded-t-sm bg-copper-light/80" style={{ height: `${b.altura}%` }} />
-                <span className="text-center text-[10px] text-white/50">{b.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  
 }
 
 function LeadForm() {
@@ -337,16 +293,18 @@ function LeadForm() {
       {erro ? <p role="alert" className="text-sm text-destructive sm:col-span-2">{erro}</p> : null}
       <div className="sm:col-span-2">
         <Button type="submit" size="lg" className="w-full sm:w-auto">Solicitar contato</Button>
-        <p className="mt-3 text-xs text-muted-foreground">Formulário de demonstração — nenhum dado é enviado a um servidor real.</p>
       </div>
+      
     </form>
+    
+    
   );
 }
 
 function Footer() {
   return (
     <footer className="bg-ink text-white/70">
-      <div className="container flex flex-col gap-6 py-12 sm:flex-row sm:justify-between">
+      <div className="container flex flex-col gap-3 py-6 sm:flex-row sm:justify-between">
         <div>
           <span className="font-display text-lg font-semibold text-white">Fluxora</span>
           <p className="mt-2 max-w-xs text-sm">Software de controle de matéria-prima para indústrias.</p>
