@@ -337,6 +337,7 @@ function LeadForm() {
       {erro ? <p role="alert" className="text-sm text-destructive sm:col-span-2">{erro}</p> : null}
       <div className="sm:col-span-2">
         <Button type="submit" size="lg" className="w-full sm:w-auto">Solicitar contato</Button>
+        <p className="mt-3 text-xs text-muted-foreground">Formulário de demonstração — nenhum dado é enviado a um servidor real.</p>
       </div>
     </form>
   );
